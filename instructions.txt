@@ -1,0 +1,5 @@
+Faire fonctionner le logiciel : 
+
+-Tout d'abord utiliser de préférence Xampp (login : "root" ; mdp : "", vérifier dans SingleConnection que ce soit bien ces crédentiels)
+-Importer le SQL de la base de donnée avec ou sans jeu de donnée dans une base nommée "hoplanning"
+-Lancer le main.java
