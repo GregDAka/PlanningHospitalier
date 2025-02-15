@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="693.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleurs.calendarControleur">
+   <children>
+      <HBox alignment="CENTER" prefHeight="36.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="ajouterCreneau" mnemonicParsing="false" onAction="#ajoutDuCreneau" text="Ajouter un créneau">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="ajouterPersonnel" mnemonicParsing="false" onAction="#ajoutDunPersonnel" text="Ajouter un personnel">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+
+            <Button fx:id="gererContrainteslegales" mnemonicParsing="false" onAction="#gererContraintes" text="Gérer les contraintes légales">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="647.0" prefWidth="1065.0">
+         <children>
+            <VBox prefHeight="453.0" prefWidth="133.0">
+               <children>
+                  <TextField />
+                  <ListView fx:id="listeDuPersonnel" onMouseClicked="#consulterPersonnel" prefHeight="328.0" prefWidth="128.0" />
+                  <Button fx:id="actualiser" mnemonicParsing="false" onAction="#actualiserListe" prefHeight="25.0" prefWidth="131.0" text="Actualiser" />
+               </children>
+            </VBox>
+            <VBox prefHeight="646.0" prefWidth="958.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="972.0" text="Emploi du temps" />
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="953.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="moinsUneSemaine" mnemonicParsing="false" onAction="#semainePrecedente" text="Semaine précédente" />
+                        <Button fx:id="plusUneSemaine" mnemonicParsing="false" onAction="#semaineSuivante" text="Semaine suivante" />
+                     </children>
+                  </HBox>
+                  <GridPane fx:id="tableau" prefHeight="568.0" prefWidth="937.0" style="-fx-border-color: lightgray; -fx-border-style: solid; -fx-border-width: 1; -fx-grid-lines-visible: true;">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="1.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Lundi" GridPane.columnIndex="1" />
+                        <Label text="Mardi" GridPane.columnIndex="2" />
+                        <Label text="Mercredi" GridPane.columnIndex="3" />
+                        <Label text="Jeudi" GridPane.columnIndex="4" />
+                        <Label text="Vendredi" GridPane.columnIndex="5" />
+                        <Label text="Samedi" GridPane.columnIndex="6" />
+                        <Label text="Dimanche" GridPane.columnIndex="7" />
+                        <Label fx:id="lundiDate" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="mardiDate" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="mercrediDate" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label fx:id="jeudiDate" text="Label" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                        <Label fx:id="vendrediDate" text="Label" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <Label fx:id="samediDate" text="Label" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                        <Label fx:id="dimancheDate" text="Label" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                        <Label text="00h" GridPane.rowIndex="2" />
+                        <Label text="01h" GridPane.rowIndex="3" />
+                        <Label text="02h" GridPane.rowIndex="4" />
+                        <Label text="03h" GridPane.rowIndex="5" />
+                        <Label text="23h" GridPane.rowIndex="25" />
+                        <Label text="04h" GridPane.rowIndex="6" />
+                        <Label text="05h" GridPane.rowIndex="7" />
+                        <Label text="06h" GridPane.rowIndex="8" />
+                        <Label text="07h" GridPane.rowIndex="9" />
+                        <Label text="08h" GridPane.rowIndex="10" />
+                        <Label text="09h" GridPane.rowIndex="11" />
+                        <Label text="10h" GridPane.rowIndex="12" />
+                        <Label text="11h" GridPane.rowIndex="13" />
+                        <Label text="12h" GridPane.rowIndex="14" />
+                        <Label text="13h" GridPane.rowIndex="15" />
+                        <Label text="14h" GridPane.rowIndex="16" />
+                        <Label text="15h" GridPane.rowIndex="17" />
+                        <Label text="16h" GridPane.rowIndex="18" />
+                        <Label text="17h" GridPane.rowIndex="19" />
+                        <Label text="18h" GridPane.rowIndex="20" />
+                        <Label text="19h" GridPane.rowIndex="21" />
+                        <Label text="20h" GridPane.rowIndex="22" />
+                        <Label text="21h" GridPane.rowIndex="23" />
+                        <Label text="22h" GridPane.rowIndex="24" />
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
